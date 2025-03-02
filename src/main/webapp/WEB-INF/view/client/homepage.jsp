@@ -7,12 +7,17 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="FShop - Mua sắm công nghệ">
-            <title>ShyShop - Công nghệ trong tay bạn</title>
+            <title>Nowshop - Công nghệ trong tay bạn</title>
             <style>
                 * {
                     margin: 0;
                     padding: 0;
                     box-sizing: border-box;
+                }
+
+                a {
+                    text-decoration: none;
+                    /* Loại bỏ gạch dưới */
                 }
 
                 body {
@@ -253,8 +258,8 @@
             <!-- Header -->
             <header>
                 <div class="header-container">
-                    <a href="#">
-                        <h1>ShyShop</h1>
+                    <a href="/">
+                        <h1>NowShop</h1>
                     </a>
                     <div class="search-bar">
                         <input type="text" placeholder="Tìm kiếm sản phẩm...">

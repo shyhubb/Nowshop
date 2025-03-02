@@ -206,7 +206,7 @@
                 <div class="admin-content">
                     <div class="card">
                         <div class="card-header">Quản lý người dùng</div>
-                        <a href="/user/register" class="btn edit-btn"><i class="fas fa-user-plus"></i> Thêm người
+                        <a href="/admin/user/create" class="btn edit-btn"><i class="fas fa-user-plus"></i> Thêm người
                             dùng</a>
                         <table>
                             <thead>
@@ -228,7 +228,7 @@
 
                                                 <form action="/admin/user/profile/${user.id}" method="post">
                                                     <button type="submit" class="btn delete-btn">
-                                                        <i class="fas fa-trash-alt"></i> Cập nhật
+                                                        <i class="fas fa-edit"></i> Cập nhật
                                                     </button>
                                                 </form>
 

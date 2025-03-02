@@ -250,23 +250,17 @@
                         <a href="/admin/viewproduct"><i class="fas fa-box"></i> Quản lý sản phẩm</a>
                         <a href="/admin/viewoders"><i class="fas fa-box"></i> Quản lý đơn hàng</a>
                         <a href="/admin/viewuser"><i class="fas fa-users"></i> Quản lý người dùng</a>
-
                     </aside>
 
                     <!-- Admin Content -->
                     <div class="admin-content">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Cập nhật tài khoản người dùng</h4>
+                                <h4>Tạo Account mới </h4>
                             </div>
                             <div class="card-body">
                                 <!-- Form cập nhật sử dụng modelAttribute="user" -->
                                 <form:form method="post" action="/admin/user/update" modelAttribute="user">
-                                    <!-- Trường ID (chỉ đọc) -->
-                                    <div class="mb-3">
-                                        <label for="id">ID</label>
-                                        <form:input type="text" id="id" path="id" readonly="true" />
-                                    </div>
 
                                     <!-- Trường Họ và tên -->
                                     <div class="mb-3">

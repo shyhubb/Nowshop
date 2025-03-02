@@ -6,7 +6,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>ShyShop - Đăng Ký</title>
+            <title>Nowshop - Đăng Ký</title>
             <style>
                 * {
                     margin: 0;
@@ -168,7 +168,7 @@
             <header>
                 <div class="header-container">
                     <a href="/">
-                        <h1>ShyShop</h1>
+                        <h1>Nowshop</h1>
                     </a>
                     <div class="header-actions">
                         <a href="../user/login">Đăng nhập</a>
