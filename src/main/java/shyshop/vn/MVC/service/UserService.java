@@ -2,7 +2,6 @@ package shyshop.vn.MVC.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.stereotype.Service;
 import shyshop.vn.MVC.domain.*;
 import shyshop.vn.MVC.repository.*;
@@ -16,9 +15,6 @@ public class UserService {
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
-    // Các phương thức của UserService sẽ gọi trực tiếp các phương thức từ
-    // UserRepository
 
     // Save user
     public User save(User user) {

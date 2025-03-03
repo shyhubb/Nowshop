@@ -206,7 +206,7 @@
                 <div class="admin-content">
                     <div class="card">
                         <div class="card-header">Quản lý sản phẩm </div>
-                        <a href="/user/register" class="btn edit-btn"><i class="fas fa-user-plus"></i> Thêm sản phẩm
+                        <a href="/admin/addproduct" class="btn edit-btn"><i class="fas fa-user-plus"></i> Thêm sản phẩm
                         </a>
                         <table>
                             <thead>
@@ -218,19 +218,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach var="user" items="${users}">
+                                <!-- <c:forEach var="product" items="${users}">
                                     <tr>
                                         <td>${user.id}</td>
                                         <td>${user.name}</td>
                                         <td>${user.email}</td>
                                         <td>
-                                            <div style="display: flex; gap: 10px; justify-content: center;">
-                                                <!-- Nút Sửa -->
+                                            <div style="display: flex; gap: 10px; justify-content: center;"> 
+                                        
                                                 <a href="/admin/edit/${user.id}" class="btn edit-btn">
                                                     <i class="fas fa-edit"></i> Chi tiết
                                                 </a>
 
-                                                <!-- Nút Xóa -->
+                                              
                                                 <form action="/admin/delete/${user.id}" method="post"
                                                     onsubmit="return confirm('Bạn có chắc chắn muốn xóa ${user.name}?')">
                                                     <button type="submit" class="btn delete-btn">
@@ -240,7 +240,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                </c:forEach>
+                                </c:forEach> -->
                             </tbody>
                         </table>
                     </div>

@@ -1,10 +1,8 @@
 package shyshop.vn.MVC.repository;
 
 import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
 import shyshop.vn.MVC.domain.*;
 
 @Repository

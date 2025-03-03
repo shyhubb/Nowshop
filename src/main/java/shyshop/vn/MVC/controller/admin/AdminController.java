@@ -1,14 +1,11 @@
 package shyshop.vn.MVC.controller.admin;
-
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-
 import shyshop.vn.MVC.domain.*;
 import shyshop.vn.MVC.service.*;
 import org.springframework.web.bind.annotation.PostMapping;
