@@ -205,7 +205,7 @@
                 <!-- Admin Main Content -->
                 <div class="admin-content">
                     <div class="card">
-                        <div class="card-header">Quản lý người dùng</div>
+                        <div class="card-header">Quản lý sản phẩm </div>
                         <a href="/user/register" class="btn edit-btn"><i class="fas fa-user-plus"></i> Thêm sản phẩm
                         </a>
                         <table>
