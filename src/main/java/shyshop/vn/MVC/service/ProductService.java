@@ -9,12 +9,17 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
-
 import shyshop.vn.MVC.domain.Product;
 import shyshop.vn.MVC.repository.ProductRepository;
 
 @Service
 public class ProductService implements ProductRepository {
+
+    private ProductRepository productRepository;
+
+    ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     @Override
     public void flush() {
@@ -90,8 +95,7 @@ public class ProductService implements ProductRepository {
 
     @Override
     public List<Product> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return productRepository.findAll();
     }
 
     @Override
@@ -101,9 +105,8 @@ public class ProductService implements ProductRepository {
     }
 
     @Override
-    public <S extends Product> S save(S entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+    public Product save(Product product) { // method add a product to sql
+        return productRepository.save(product);
     }
 
     @Override
@@ -126,14 +129,12 @@ public class ProductService implements ProductRepository {
 
     @Override
     public void deleteById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+        productRepository.deleteById(id);
     }
 
     @Override
-    public void delete(Product entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    public void delete(Product product) {
+        productRepository.delete(product);
     }
 
     @Override

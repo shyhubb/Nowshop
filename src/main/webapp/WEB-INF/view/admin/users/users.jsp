@@ -197,9 +197,9 @@
                 <aside class="sidebar">
                     <h3>Menu Quản trị</h3>
                     <a href="/admin"><i class="fas fa-tachometer-alt"></i> Tổng quan</a>
-                    <a href="/admin/viewproduct"><i class="fas fa-box"></i> Quản lý sản phẩm</a>
+                    <a href="/admin/products/viewproducts"><i class="fas fa-box"></i> Quản lý sản phẩm </a>
                     <a href="/admin/viewoders"><i class="fas fa-box"></i> Quản lý đơn hàng</a>
-                    <a href="/admin/viewuser"><i class="fas fa-users"></i> Quản lý người dùng</a>
+                    <a href="/admin/users/viewuser"><i class="fas fa-users"></i> Quản lý người dùng</a>
                 </aside>
 
                 <!-- Admin Main Content -->
@@ -233,7 +233,7 @@
                                                 </form>
 
                                                 <!-- Nút Xóa -->
-                                                <form action="/admin/delete/${user.id}" method="post"
+                                                <form action="/admin/users/delete/${user.id}" method="post"
                                                     onsubmit="return confirm('Bạn có chắc chắn muốn xóa ${user.name}?')">
                                                     <button type="submit" class="btn delete-btn">
                                                         <i class="fas fa-trash-alt"></i> Xóa

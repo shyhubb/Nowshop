@@ -1,5 +1,7 @@
 package shyshop.vn.MVC.controller.client;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,14 +14,18 @@ import shyshop.vn.MVC.service.*;
 public class UserController {
 
     private UserService userService;
+    private ProductService productService;
 
-    UserController(UserService userService) {
+    UserController(UserService userService, ProductService productService) {
         this.userService = userService;
+        this.productService = productService;
     }
 
-    // Trang chủ
     @GetMapping("/")
-    public String getHomePage() {
+    public String getHomePage(Model model) {
+        List<Product> products = productService.findAll();
+        model.addAttribute("products", products); // Truyền danh sách sản phẩm vào model
+        System.err.println(products);
         return "client/homepage";
     }
 

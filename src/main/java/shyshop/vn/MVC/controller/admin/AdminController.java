@@ -1,4 +1,5 @@
 package shyshop.vn.MVC.controller.admin;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Controller;
@@ -9,49 +10,51 @@ import org.springframework.web.bind.annotation.PathVariable;
 import shyshop.vn.MVC.domain.*;
 import shyshop.vn.MVC.service.*;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AdminController {
     private AdminService adminService;
     private UserService userService;
+    private ProductService productService;
 
-    public AdminController(AdminService adminService, UserService userService) {
+    public AdminController(AdminService adminService, UserService userService, ProductService productService) {
         this.adminService = adminService;
         this.userService = userService;
+        this.productService = productService;
     }
 
     @GetMapping("/admin")
-    public String adminDashborad() {
+    public String adminDashborad(Model mode) {
         return "/admin/dashboard";
     }
 
-    @GetMapping("admin/viewuser")
+    @GetMapping("/admin/users/viewuser")
     public String showUser(Model model) {
         // Lấy danh sách người dùng từ UserService
         List<User> users = userService.findAll();
-
         // Thêm danh sách người dùng vào model
         model.addAttribute("users", users);
         // Trả về view (tên trang JSP/HTML mà bạn muốn hiển thị)
-        return "admin/users";
+        return "admin/users/users";
     }
 
     @GetMapping("admin/viewoders") // quan li oder
     public String showOders(Model model) {
 
-        return "admin/oders";
+        return "admin/oders/oders";
     }
 
-    @GetMapping("/admin/viewproduct") // trang quan li san pham
-    public String showProducts() {
-        return "admin/products";
+    @GetMapping("/admin/products/viewproducts") // trang quan li san pham
+    public String showProducts(Model model) {
+        List<Product> products = productService.findAll();
+        model.addAttribute("products", products);
+        return "admin/products/products"; // dieu huong qua trang san pham
     }
 
-    @PostMapping("/admin/delete/{id}") // method xoa user
+    @PostMapping("/admin/users/delete/{id}") // method xoa user
     public String deleteUser(Model model, @PathVariable long id) {
         userService.deleteById(id);
-        return "redirect:/admin/viewuser";
+        return "redirect:/admin/users/viewuser";
     }
 
     @PostMapping("/admin/user/profile/{id}")
@@ -62,18 +65,18 @@ public class AdminController {
         } else {
             model.addAttribute("error", "Không tìm thấy người dùng!");
         }
-        return "admin/updateuser";
+        return "admin/users/updateuser";
     }
 
-    @PostMapping("/admin/user/update") // method update user
+    @PostMapping("/admin/users/update") // method update user
     public String updateUser(Model model, @ModelAttribute("user") User user) {
         adminService.save(user);
-        return "redirect:/admin/viewuser";
+        return "redirect:/admin/users/viewuser";
     }
 
     @GetMapping("/admin/user/create")
     public String getUserNew(@ModelAttribute("user") User user) {
-        return "admin/createuser";
+        return "admin/users/createuser";
     }
 
 }

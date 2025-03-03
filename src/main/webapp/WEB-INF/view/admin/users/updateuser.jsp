@@ -8,7 +8,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>ShyShop - Thêm sản phẩm mới </title>
+                <title>ShyShop - Cập nhật tài khoản</title>
                 <link rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
                 <style>
@@ -247,42 +247,54 @@
                     <aside class="sidebar">
                         <h3>Menu Quản trị</h3>
                         <a href="/admin"><i class="fas fa-tachometer-alt"></i> Tổng quan</a>
-                        <a href="/admin/viewproduct"><i class="fas fa-box"></i> Quản lý sản phẩm</a>
+                        <a href="/admin/products/viewproducts"><i class="fas fa-box"></i> Quản lý sản phẩm </a>
                         <a href="/admin/viewoders"><i class="fas fa-box"></i> Quản lý đơn hàng</a>
-                        <a href="/admin/viewuser"><i class="fas fa-users"></i> Quản lý người dùng</a>
+                        <a href="/admin/users/viewuser"><i class="fas fa-users"></i> Quản lý người dùng</a>
+
                     </aside>
 
                     <!-- Admin Content -->
                     <div class="admin-content">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Tạo Account mới </h4>
+                                <h4>Cập nhật tài khoản người dùng</h4>
                             </div>
                             <div class="card-body">
                                 <!-- Form cập nhật sử dụng modelAttribute="user" -->
-                                <form:form method="post" action="/admin/product/update" modelAttribute="product">
+                                <form:form method="post" action="/admin/users/update" modelAttribute="user">
+                                    <!-- Trường ID (chỉ đọc) -->
+                                    <div class="mb-3">
+                                        <label for="id">ID</label>
+                                        <form:input type="text" id="id" path="id" readonly="true" />
+                                    </div>
 
                                     <!-- Trường Họ và tên -->
-                                    <!-- Trường Tên sản phẩm -->
                                     <div class="mb-3">
-                                        <label for="name">Tên sản phẩm</label>
-                                        <form:input type="text" id="name" path="name" placeholder="Nhập tên sản phẩm" />
+                                        <label for="fullName">Họ và tên</label>
+                                        <form:input type="text" id="fullName" path="name"
+                                            placeholder="Nhập họ và tên" />
                                     </div>
 
-                                    <!-- Trường Giá sản phẩm -->
+                                    <!-- Trường Email -->
                                     <div class="mb-3">
-                                        <label for="price">Giá sản phẩm</label>
-                                        <form:input type="number" id="price" path="price"
-                                            placeholder="Nhập giá sản phẩm" />
+                                        <label for="email">Email</label>
+                                        <form:input type="email" id="email" path="email" placeholder="Nhập email" />
                                     </div>
 
-                                    <!-- Trường Hãng sản phẩm -->
+                                    <!-- Trường Mật khẩu -->
                                     <div class="mb-3">
-                                        <label for="category">Hãng</label>
-                                        <form:input type="text" id="category" path="category"
-                                            placeholder="Nhập hãng sản phẩm" />
+                                        <label for="password">Mật khẩu</label>
+                                        <form:input type="password" id="password" path="password"
+                                            placeholder="Nhập mật khẩu" />
                                     </div>
 
+                                    <!-- Nút submit -->
+                                    <button type="submit">Cập nhật</button>
+
+                                    <!-- Hiển thị thông báo -->
+                                    <c:if test="${not empty message}">
+                                        <div class="message">${message}</div>
+                                    </c:if>
                                 </form:form>
                             </div>
                         </div>

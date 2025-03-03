@@ -197,9 +197,9 @@
                 <aside class="sidebar">
                     <h3>Menu Quản trị</h3>
                     <a href="/admin"><i class="fas fa-tachometer-alt"></i> Tổng quan</a>
-                    <a href="/admin/viewproduct"><i class="fas fa-box"></i> Quản lý sản phẩm</a>
+                    <a href="/admin/products/viewproducts"><i class="fas fa-box"></i> Quản lý sản phẩm </a>
                     <a href="/admin/viewoders"><i class="fas fa-box"></i> Quản lý đơn hàng</a>
-                    <a href="/admin/viewuser"><i class="fas fa-users"></i> Quản lý người dùng</a>
+                    <a href="/admin/users/viewuser"><i class="fas fa-users"></i> Quản lý người dùng</a>
                 </aside>
 
                 <!-- Admin Main Content -->
@@ -215,23 +215,22 @@
                                     <th>Tên sản phẩm </th>
                                     <th>Giá</th>
                                     <th>Hãng</th>
+                                    <th>Hành động </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- <c:forEach var="product" items="${users}">
+                                <c:forEach var="product" items="${products}">
                                     <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.name}</td>
-                                        <td>${user.email}</td>
+                                        <td>${product.id}</td>
+                                        <td>${product.name}</td>
+                                        <td>${product.price}</td>
+                                        <td>${product.category}</td>
                                         <td>
-                                            <div style="display: flex; gap: 10px; justify-content: center;"> 
-                                        
+                                            <div style="display: flex; gap: 10px; justify-content: center;">
                                                 <a href="/admin/edit/${user.id}" class="btn edit-btn">
                                                     <i class="fas fa-edit"></i> Chi tiết
                                                 </a>
-
-                                              
-                                                <form action="/admin/delete/${user.id}" method="post"
+                                                <form action="/admin/deleteproduct/${product.id}" method="post"
                                                     onsubmit="return confirm('Bạn có chắc chắn muốn xóa ${user.name}?')">
                                                     <button type="submit" class="btn delete-btn">
                                                         <i class="fas fa-trash-alt"></i> Xóa
@@ -240,7 +239,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                </c:forEach> -->
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

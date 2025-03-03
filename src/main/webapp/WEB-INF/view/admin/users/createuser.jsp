@@ -249,9 +249,9 @@
                     <aside class="sidebar">
                         <h3>Menu Quản trị</h3>
                         <a href="/admin"><i class="fas fa-tachometer-alt"></i> Tổng quan</a>
-                        <a href="/admin/viewproduct"><i class="fas fa-box"></i> Quản lý sản phẩm</a>
-                        <a href="/admin/viewoders"><i class="fas fa-box"></i> Quản lý đơn hàng</a>
-                        <a href="/admin/viewuser"><i class="fas fa-users"></i> Quản lý người dùng</a>
+                        <a href="/admin/products/viewproducts"><i class="fas fa-box"></i> Quản lý sản phẩm </a>
+                        <a href="/admin/products/viewoders"><i class="fas fa-box"></i> Quản lý đơn hàng</a>
+                        <a href="/admin/users/viewuser"><i class="fas fa-users"></i> Quản lý người dùng</a>
                     </aside>
 
                     <!-- Admin Content -->
@@ -262,7 +262,7 @@
                             </div>
                             <div class="card-body">
                                 <!-- Form cập nhật sử dụng modelAttribute="user" -->
-                                <form:form method="post" action="/admin/user/update" modelAttribute="user">
+                                <form:form method="post" action="/admin/users/update" modelAttribute="user">
 
                                     <!-- Trường Họ và tên -->
                                     <div class="mb-3">
@@ -285,7 +285,7 @@
                                     </div>
 
                                     <!-- Nút submit -->
-                                    <button type="submit">Cập nhật</button>
+                                    <button type="submit">Send</button>
 
                                     <!-- Hiển thị thông báo -->
                                     <c:if test="${not empty message}">
